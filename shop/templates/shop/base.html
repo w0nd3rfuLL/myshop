@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Iksepshn{% endblock %}</title>
+    <link href="{% static 'shop/css/base.css' %}" rel="stylesheet">
+
+</head>
+<body>
+<div id="header">
+    <a href="/" class="logo">Iksepshn</a>
+</div>
+<div id="subheader">
+    <div class="cart">
+        Ваша корзина пуста.
+    </div>
+</div>
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

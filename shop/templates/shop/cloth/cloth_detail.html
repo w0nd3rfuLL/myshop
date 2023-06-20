@@ -1,0 +1,14 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+    {% if category %}{{ category.title }}{% else %}Одежда{% endif %}
+{% endblock %}
+{% block content %}
+    <div class="cloth-detail">
+        <img src="{% if cloth.image %}{{ cloth.image.url }}{% else %}{% static ='img/no_image.png' %}{% endif %}">
+        <h1>{{ cloth.name }}</h1>
+        <h2><a href="{{ cloth.category.get_absolute_url }}">{{ cloth.category }}</a></h2>
+        <p class="price">${{ cloth.price }}</p>
+        {{ cloth.description|linebreaks }}
+    </div>
+{% endblock %}
